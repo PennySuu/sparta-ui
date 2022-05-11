@@ -234,7 +234,7 @@ export default {
       oldInputText: null,
       isOnComposition: false,
       singleSelected: '',
-      needFilterMethod: true, // 是否应该调用filterMethod方法，用户主动选择的时候，虽然输入框的值变化了，但是不应再去过滤了
+      needFilterMethod: false, // 是否应该调用filterMethod方法，用户主动选择的时候，虽然输入框的值变化了，但是不应再去过滤了
     }
   },
 
@@ -329,7 +329,7 @@ export default {
       }
     },
     spOptions() {
-      const currentValue = this.isCustomFilter && this.inputText ? this.inputText : this.value
+      const currentValue = this.isCustomFilter && this.inputText.trim() ? this.inputText : this.value
       this.setCurrentValue(currentValue, true)
     },
     isFocus(val) {
