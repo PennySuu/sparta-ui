@@ -6,7 +6,19 @@ module.exports = () => {
     'result': [
       { label: 'Tony', value: 1 },
       { label: 'Bob', value: 2 },
-      { label: 'Jack', value: 3 }
+      { label: 'Jack', value: 3 },
+      { label: 'Tony', value: 1 },
+      { label: 'Bob', value: 2 },
+      { label: 'Jack', value: 3 },
+      { label: 'Tony', value: 1 },
+      { label: 'Bob', value: 2 },
+      { label: 'Jack', value: 3 },
+      { label: 'Tony', value: 1 },
+      { label: 'Bob', value: 2 },
+      { label: 'Jack', value: 3 },
+      { label: 'Tony', value: 1 },
+      { label: 'Bob', value: 2 },
+      { label: 'Jack', value: 3 },
     ]
   }
 }
