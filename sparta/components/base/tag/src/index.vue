@@ -1,24 +1,8 @@
-<template>
-  <transition name="sp-zoom-in-center">
-    <span
-      class="sp-tag"
-      :class="`sp-tag--${type}`"
-    >
-      <slot></slot>
-      <i
-        v-if="closable"
-        class="sp-icon-close"
-        @click="handleClose"
-      />
-    </span>
-  </transition>
-</template>
-
 <script>
 export default {
   name: 'SpTag',
-
   props: {
+    text: String,
     type: {
       type: String,
       default: '',
@@ -29,16 +13,43 @@ export default {
     closable: {
       type: Boolean,
       default: false
+    },
+    disableTransitions: Boolean,
+    color: String,
+  },
+  methods: {
+    handleClose(event) {
+      event.stopPropagation()
+      this.$emit('close', event)
+    },
+    handleClick(event) {
+      this.$emit('click', event)
     }
   },
-  
-  methods: {
-    handleClose(e) {
-      this.$emit('close', e)
-    }
+
+  render() {
+    const { type } = this
+    const classes = [
+      'sp-tag',
+      type ? `sp-tag--${type}` : ''
+    ]
+    const tagEl = (
+      <span
+        class={ classes }
+        style={{ backgroundColor: this.color }}
+        on-click={ this.handleClick }>
+        { this.$slots.default }
+        {
+          this.closable && <i class="sp-tag__close sp-icon-close" on-click={ this.handleClose }></i>
+        }
+      </span>
+    )
+
+    return this.disableTransitions ? tagEl : <transition name="sp-zoom-in-center">{ tagEl }</transition>
   }
 }
 </script>
+
 
 <style lang="scss">
 .sp-tag {

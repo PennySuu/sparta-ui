@@ -165,7 +165,7 @@ import SpCascaderPanel from 'base/cascader-panel'
 // import AriaUtils from 'element-ui/src/utils/aria-utils';
 import { isEqual, isEmpty, kebabCase, debounce } from 'sparta/common/js/utils/tool'
 import { isUndefined, isFunction, isDefined } from 'sparta/common/js/utils/types'
-// import { addResizeListener, removeResizeListener } from 'sparta/common/js/utils/resize-event'
+import { addResizeListener, removeResizeListener } from 'sparta/common/js/utils/resize-event'
 // import debounce from 'throttle-debounce/debounce';
 
 const KeyCode = {
@@ -212,6 +212,7 @@ const PopperMixin = {
   },
   methods: Popper.methods,
   data: Popper.data,
+  created: Popper.created,
   beforeDestroy: Popper.beforeDestroy
 }
 
@@ -420,13 +421,11 @@ export default {
         this.filtering = false
       }
     }, this.debounce)
-
-    // addResizeListener(this.$el, this.updateStyle)
-    this.updateStyle()
+    addResizeListener(this.$el, this.updateStyle)
   },
 
   beforeDestroy() {
-    // removeResizeListener(this.$el, this.updateStyle)
+    removeResizeListener(this.$el, this.updateStyle)
   },
 
   methods: {
@@ -603,7 +602,9 @@ export default {
 
       this.filtering = true
       this.suggestions = suggestions
-      this.$nextTick(this.updatePopper)
+      this.$nextTick(() => {
+        this.updatePopper()
+      })
     },
     handleSuggestionKeyDown(event) {
       const { keyCode, target } = event
@@ -672,7 +673,6 @@ export default {
 
       if (!inputInner) return
 
-      const tags = $el.querySelector('.sp-cascader__tags')
       let suggestionPanelEl = null
 
       if (suggestionPanel && (suggestionPanelEl = suggestionPanel.$el)) {
@@ -680,6 +680,7 @@ export default {
         suggestionList.style.minWidth = inputInner.offsetWidth + 'px'
       }
 
+      const tags = $el.querySelector('.sp-cascader__tags')
       if (tags) {
         const offsetHeight = Math.round(tags.getBoundingClientRect().height)
         const height = Math.max(offsetHeight + 6, inputInitialHeight) + 'px'

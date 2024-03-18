@@ -1,6 +1,6 @@
 {
   "name": "sparta-ui",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "description": "网易支付PC组件库",
   "homepage": "https://github.com/CodeLittlePrince/sparta-ui",
   "repository": "https://github.com/CodeLittlePrince/sparta-ui.git",
@@ -147,6 +147,7 @@
   "dependencies": {
     "async-validator": "^3.5.2",
     "lodash.clonedeep": "^4.5.0",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "resize-observer-polyfill": "^1.5.0"
   }
 }
