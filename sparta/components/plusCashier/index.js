@@ -18,6 +18,7 @@ import Checkbox from './checkbox'
 import CheckboxGroup from './checkbox-group'
 import Tag from './tag'
 import SafeKeyboard from './safe-keyboard'
+import PopLayerManage from 'sparta/model/PopLayerManage'
 
 const components = [
   Row,
@@ -56,6 +57,7 @@ Sparta.install = Vue => {
   Vue.prototype.$sparta.warning = Toast('warning')
   Vue.prototype.$sparta.info = Toast('info')
   Vue.prototype.$sparta.confirm = confirm
+  Vue.prototype.$sparta.popLayerManage = PopLayerManage.getInstance()
 }
 
 
