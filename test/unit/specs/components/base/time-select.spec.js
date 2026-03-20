@@ -72,7 +72,10 @@ describe('time-select', () => {
       await wrapper.setData({ val: '02:00' })
       const input = wrapper.find('input')
       expect(wrapper.vm.val).to.equal('02:00')
-      await input.trigger('focus')
+      // 触发 sp-input 组件的 mouseenter 事件，使 isHover = true，这样 showClear 才为 true
+      const spInput = wrapper.find('.sp-input')
+      await spInput.trigger('mouseenter')
+      await wrapper.vm.$nextTick()
       await wrapper.find('.sp-icon-close-bold').trigger('click')
       expect(wrapper.vm.val).to.equal('')
     })

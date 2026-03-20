@@ -351,8 +351,11 @@ describe('Select', () => {
 
       it('直接使用键盘向上/向下，显示所有下拉选项，全部没有点亮，输入包含的值，正确过滤数据，使用键盘移动，并选择一个选项, 下拉框关闭，正确显示正常的文案和icon, 并将新值传出， 再次使用键盘向上/向下，显示所有下拉选项，并且请选择的地址显示已选的文案，滚动和点亮已选项', async () => {
         await setSelectVal(wrapper, 'pi')
+        await wrapper.vm.$nextTick()
         await select.navigateOptions('next')
+        await wrapper.vm.$nextTick()
         select.handleInputEnter()
+        await wrapper.vm.$nextTick()
         await wrapper.vm.$nextTick()
 
         expect(wrapper.find('.sp-select-dropdown').isVisible()).to.be.false
@@ -408,8 +411,11 @@ describe('Select', () => {
         expect(wrapper.find('.sp-select-list .is--selected').exists()).to.be.true
 
         await setSelectVal(wrapper, 'pig')
+        await wrapper.vm.$nextTick()
         await select.navigateOptions('next')
+        await wrapper.vm.$nextTick()
         select.handleInputEnter()
+        await wrapper.vm.$nextTick()
         await wrapper.vm.$nextTick()
 
         expect(wrapper.find('.sp-select-dropdown').isVisible()).to.be.false
