@@ -49,6 +49,7 @@ import CascaderPanel from './cascader-panel'
 import ScrollBar from './scrollbar'
 import Tree from './tree'
 import Switch from './switch'
+import SafeKeyboard from './safe-keyboard'
 
 const components = [
   Row,
@@ -98,6 +99,7 @@ const components = [
   ScrollBar,
   Tree,
   Switch,
+  SafeKeyboard,
 ]
 
 let Sparta = {}
@@ -173,4 +175,5 @@ export {
   ScrollBar,
   Tree,
   Switch,
+  SafeKeyboard,
 }

@@ -1,10 +1,10 @@
 /* stylelint-disable */
 @font-face {
-  font-family: "sparta-icons"; /* Project id 4871700 */
+  font-family: "sparta-icons"; /* Project id 4963735 */
   src:
-    url("./font/iconfont.woff2?t=1628055677570") format("woff2"),
-    url("./font/iconfont.woff?t=1628055677570") format("woff"),
-    url("./font/iconfont.ttf?t=1628055677570") format("truetype");
+    url("./font/iconfont.woff2?t=1773728473504") format("woff2"),
+    url("./font/iconfont.woff?t=1773728473504") format("woff"),
+    url("./font/iconfont.ttf?t=1773728473504") format("truetype");
 }
 
 .sparta-icons {
@@ -13,6 +13,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.sp-icon-epay-logo:before {
+  content: "\e61f";
+}
+
+.sp-icon-backspace_bold:before {
+  content: "\e6c9";
 }
 
 .sp-icon-arrow-down-bold:before {

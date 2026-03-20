@@ -71,6 +71,11 @@ export default {
               link: '/base/password-input',
               index: '3-4-12'
             },
+            {
+              title: 'SafeKeyboard 安全键盘',
+              link: '/base/safe-keyboard',
+              index: '3-4-13'
+            },
           ]
         },
         {

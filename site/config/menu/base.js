@@ -153,6 +153,11 @@ export default {
               link: '/base/switch',
               index: '3-4-13'
             },
+            {
+              title: 'SafeKeyboard 安全键盘（新）',
+              link: '/base/safe-keyboard',
+              index: '3-4-14'
+            },
           ]
         },
         {

@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "47084192",
+      "name": "epay-logo",
+      "font_class": "epay-logo",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "47095581",
+      "name": "backspace_bold",
+      "font_class": "backspace_bold",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
       "icon_id": "23230451",
       "name": "arrow-down-bold",
       "font_class": "arrow-down-bold",

@@ -17,6 +17,7 @@ import Option from './option'
 import Checkbox from './checkbox'
 import CheckboxGroup from './checkbox-group'
 import Tag from './tag'
+import SafeKeyboard from './safe-keyboard'
 
 const components = [
   Row,
@@ -37,6 +38,7 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Tag,
+  SafeKeyboard,
 ]
 
 let Sparta = {}
